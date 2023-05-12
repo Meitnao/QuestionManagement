@@ -1,10 +1,15 @@
 let currentQuestionIndex = 0;
 let isWrong = false;
+let questions = [];
+let wrongCnt = 0;
+let total = 0;
 const questionElement = document.querySelector("h1");
 const optionsElement = document.querySelector("#options");
 const submitButton = document.querySelector("#submit");
 const correctAnswerElement = document.querySelector("#correct-answer");
+// 间隔时间
 const pauseTime = 500;
+
 
 function renderQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
@@ -20,6 +25,7 @@ function renderQuestion() {
         optionsElement.append(label);
     });
     correctAnswerElement.textContent = "";
+    
 }
 
 function checkAnswer() {
@@ -38,12 +44,13 @@ function checkAnswer() {
                 // 所有问题都已回答完成
                 setTimeout(() => {
                     alert("恭喜您完成所有问题！");
-                    location.href = "end_answer.html";
+                    end_answer(total, wrongCnt);
                 }, pauseTime);
                 
             }
         } else {
             isWrong = true;
+            wrongCnt ++;
             correctAnswerElement.textContent = `正确答案是：${currentQuestion.answer}`;
             const incorrectOption = document.querySelector(
                 `input[value="${selectedAnswer.value}"]`
@@ -56,14 +63,26 @@ function checkAnswer() {
     }
 }
 
-let questions;
+function end_answer(total, cnt) {
+    console.log(total, cnt);
+    let score = total - cnt;
+    let data = {
+        "total": total,
+        "score": score
+    };
+    let queryString = '?data=' + encodeURIComponent(JSON.stringify(data));
+    window.location.href = "end_answer.html" + queryString;
+    // alert(queryString);
+}
+
 $.ajax({
     method: "GET",
     url: "conf/questions.json",
     dataType: "json",
     success: function (e) {
         questions = e;
-        console.log(questions);
+        total = questions.length;
+        wrongCnt = 0;
         renderQuestion();
         optionsElement.addEventListener("click", checkAnswer);
 
@@ -79,9 +98,11 @@ $.ajax({
                         renderQuestion();
                     } else {
                         // 所有问题都已回答完成
-                        setTimeout(pauseTime);
-                        alert("恭喜您完成所有问题！");
-                        location.href = "end_answer.html";
+                        setTimeout(() => {
+                            alert("恭喜您完成所有问题！");
+                            end_answer(total, wrongCnt);
+                            // location.href = "end_answer.html";
+                        }, pauseTime);
                     }
                     optionsElement.addEventListener("click", checkAnswer);
                 }
