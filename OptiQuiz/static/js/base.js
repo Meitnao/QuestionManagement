@@ -3,6 +3,7 @@ let isWrong = false;
 let questions = [];
 let wrongCnt = 0;
 let total = 0;
+const questionNum = 100;
 const questionElement = document.querySelector("h1");
 const optionsElement = document.querySelector("#options");
 const submitButton = document.querySelector("#submit");
@@ -25,7 +26,6 @@ function renderQuestion() {
         optionsElement.append(label);
     });
     correctAnswerElement.textContent = "";
-    
 }
 
 function checkAnswer() {
@@ -80,9 +80,16 @@ $.ajax({
     url: "conf/questions.json",
     dataType: "json",
     success: function (e) {
+        // let queryString = location.search;
+        // let urlParams = new URLSearchParams(queryString);
+        // let dataString = urlParams.get('data');
+        // let page = JSON.parse(decodeURIComponent(dataString));
+        // 还没写完
         questions = e;
-        total = questions.length;
+        total = questionNum;
         wrongCnt = 0;
+
+
         renderQuestion();
         optionsElement.addEventListener("click", checkAnswer);
 
