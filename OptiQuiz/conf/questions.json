@@ -1,0 +1,27 @@
+[
+    {
+        "question": "问题1",
+        "options": ["A.选项A", "B.选项B", "C.选项C", "D.选项D"],
+        "answer": "A"
+    },
+    {
+        "question": "问题2",
+        "options": ["A", "B", "C", "D"],
+        "answer": "C"
+    },
+    {
+        "question": "问题3",
+        "options": ["A", "B", "C", "D"],
+        "answer": "B"
+    },
+    {
+        "question": "问题4",
+        "options": ["A", "B", "C", "D"],
+        "answer": "D"
+    },
+    {
+        "question": "问题5",
+        "options": ["A", "B", "C", "D"],
+        "answer": "A"
+    }
+]
