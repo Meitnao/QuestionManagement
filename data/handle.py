@@ -3,18 +3,20 @@ import json
 
 with open('data\questions.txt', 'r', encoding='utf-8') as f:
     text = f.read()
+    # print(text)
 
 # 匹配题目、选项和答案
 pattern = r'(\d+)、(.+?)。\s*(?:([A-D])、(.+?)\s*(?=[A-D]|$))+\s*答案：\s*(\w)'
 
 questions = []
-
+# print(text)
 for match in re.finditer(pattern, text):
     # 解析题目和答案
-    index = match.group(1)
-    question = match.group(2)
-    answer = match.group(5)
-
+    index = match.group(2)
+    print(index)
+    question = match.group(3, 4, 5)
+    answer = match.group(6)
+    # print(index, question, answer)
     # 解析选项
     options = {}
     for i in range(3, len(match.groups()), 2):
