@@ -51,7 +51,7 @@ print(len(answers))
 info = []
 
 for i in range(0, len(answers)):
-    question = str(i % 100 + 1) + questions[i][len(str(i)):]
+    question = str(i % 100 + 1) + questions[i][len(str(i + 1)):]
     option = options[i]
     answer = answers[i]
     part = {
