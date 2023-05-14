@@ -7,6 +7,7 @@ let total = 0;
 let hasImg = new Array(N).fill(false);
 let images = [];
 let page, testNum;
+let checkingAnswer = false;
 const questionNum = 100;
 const questionElement = document.querySelector("h1");
 const optionsElement = document.querySelector("#options");
@@ -51,12 +52,19 @@ function renderQuestion() {
 function noTouch() {
     // const currentQuestion = questions[currentQuestionIndex];
     const options = document.querySelectorAll('input[type="radio"]');
+    const labels = document.querySelectorAll('label');
+    labels.forEach(label => {
+        label.style.pointerEvents = "none";
+    });
     options.forEach(option => {
         option.disabled = true;
     }); 
 }
 
 function checkAnswer() {
+    if (checkingAnswer) return;
+    // noTouch();
+    checkingAnswer = true;
     const currentQuestion = questions[currentQuestionIndex];
     const selectedAnswer = document.querySelector(
         'input[name="answer"]:checked'
@@ -64,11 +72,15 @@ function checkAnswer() {
     if (selectedAnswer) {
         if (selectedAnswer.value[0] === currentQuestion.answer) {
             currentQuestionIndex++;
+            optionsElement.removeEventListener("click", checkAnswer);
             noTouch();
+
             if (currentQuestionIndex < questions.length) {
                 setTimeout(() => {
                     renderQuestion();
+                    optionsElement.addEventListener("click", checkAnswer);
                 }, pauseTime);
+                
             } else {
                 // 所有问题都已回答完成
                 setTimeout(() => {
@@ -90,6 +102,7 @@ function checkAnswer() {
             optionsElement.removeEventListener("click", checkAnswer);
         }
     }
+    checkingAnswer = false;
 }
 
 function end_answer(total, cnt) {
