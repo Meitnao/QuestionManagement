@@ -10,3 +10,11 @@ input[type="radio"] {
 #correct-answer {
     color: red;
 }
+
+h1 {
+    user-select: none;
+}
+
+.noSelect {
+    user-select: none;
+}
