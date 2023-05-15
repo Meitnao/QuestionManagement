@@ -137,7 +137,9 @@ function end_answer(total, cnt) {
     let score = total - cnt;
     let data = {
         "total": total,
-        "score": score
+        "score": score,
+        "test": testNum,
+        "page": page
     };
     let queryString = '?data=' + encodeURIComponent(JSON.stringify(data));
     window.location.href = "end_answer.html" + queryString;

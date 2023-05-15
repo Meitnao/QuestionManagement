@@ -6,5 +6,8 @@ let data = JSON.parse(decodeURIComponent(dataString));
 
 $(function() {
     const score = document.querySelector("#score");
-    score.innerHTML = `本次得分：${data.score} / ${data.total}`;    
+    let retry = document.querySelector('#retry');
+    retry.href = retry.href.concat(`?test=${data.test}&page=${data.page}`);
+    score.innerHTML = `本次得分：${data.score} / ${data.total}`;
+
 });

@@ -1,0 +1,17 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 20px;
+    height: 80%;
+    width: 100%;
+}
+
+.row-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: max(50px, 10%);
+}
