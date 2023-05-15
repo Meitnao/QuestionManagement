@@ -7,11 +7,21 @@
     <title>选择练习题</title>
     <script src="static/utils/jquery-3.6.3.min.js"></script>
     <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
 </head>
 <body>
+    <div id="header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">选择练习题</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div></div>
     <div id="container">
-        <div><a href="chose.html?data=D5">电工五级理论练习题</a></div>
-        <div><a href="chose.html?data=D4">电工四级理论练习题</a></div>
+        <div><a href="chose.html?test=D4" class="btn btn-outline-primary">电工四级理论练习题</a></div>
+        <div><a href="chose.html?test=D5" class="btn btn-outline-primary">电工五级理论练习题</a></div>
     </div>
 </body>
 </html>

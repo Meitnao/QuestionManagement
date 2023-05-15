@@ -3,9 +3,9 @@ label {
     margin-bottom: 10px;
 }
   
-input[type="radio"] {
+/* input[type="radio"] {
     margin-right: 10px;
-}
+} */
 
 #correct-answer {
     color: red;
@@ -17,4 +17,29 @@ h1 {
 
 .noSelect {
     user-select: none;
+}
+
+#container {
+    align-items: center;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+#div-btn {
+    text-align: right;
+}
+
+.question {
+    text-align: left;
+}
+
+#header {
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    border-bottom: solid;
+    border-bottom-width: 3px;
 }

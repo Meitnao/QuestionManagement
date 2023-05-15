@@ -15,16 +15,16 @@ const submitButton = document.querySelector("#submit");
 const correctAnswerElement = document.querySelector("#correct-answer");
 const currentImg = document.querySelector('#img');
 // 间隔时间
-const pauseTime = 500;
+const pauseTime = 300;
 
 
 function renderQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     let imgDiv = document.querySelector('#img-div');
-    const body = document.querySelector('body');
+    const body = document.querySelector('#container');
     let idx = currentQuestionIndex + 1;
     questionElement.textContent = currentQuestion.question;
-    optionsElement.innerHTML = "";
+    // optionsElement.innerHTML = "";
     imgDiv.remove();
 
     let new_imgDiv = document.createElement('div');
@@ -36,16 +36,22 @@ function renderQuestion() {
         img.src = `static/images/tmImgs/${testNum}-${page}-${idx}.png`;
         new_imgDiv.appendChild(img);
     }
-    currentQuestion.options.forEach((option) => {
-        const label = document.createElement("label");
-        const radio = document.createElement("input");
-        label.style.userSelect = "none";
-        radio.type = "radio";
-        radio.name = "answer";
-        radio.value = option;
-        label.append(radio, option);
-        optionsElement.append(label);
-    });
+    // currentQuestion.options.forEach((option) => {
+    //     const label = document.createElement("label");
+    //     const radio = document.createElement("input");
+    //     label.style.userSelect = "none";
+    //     radio.type = "radio";
+    //     radio.name = "answer";
+    //     radio.value = option;
+    //     label.append(radio, option);
+    //     optionsElement.append(label);
+    // });
+    let labels = document.querySelectorAll('label');
+    let radios = document.querySelectorAll('input');
+    for(let i = 0; i < 4; i ++) {
+        radios[i].value = currentQuestion.options[i];
+        labels[i].innerText = currentQuestion.options[i];
+    }
     correctAnswerElement.textContent = "";
 }
 
@@ -61,6 +67,22 @@ function noTouch() {
     }); 
 }
 
+function allowTouch() {
+    let options = document.querySelectorAll('input[type="radio"]');
+    let labels = document.querySelectorAll('label');
+    labels.forEach(label => {
+        label.style.pointerEvents = "auto";
+    });
+    options.forEach(option => {
+        option.disabled = false;
+    });
+}
+
+function restoreOptionColor() {
+    const label = document.querySelector('.btn-outline-danger-wrong');
+    if(label) label.className = "btn btn-outline-danger";
+}
+
 function checkAnswer() {
     if (checkingAnswer) return;
     // noTouch();
@@ -74,13 +96,14 @@ function checkAnswer() {
             currentQuestionIndex++;
             optionsElement.removeEventListener("click", checkAnswer);
             noTouch();
-
             if (currentQuestionIndex < questions.length) {
                 setTimeout(() => {
+                    selectedAnswer.checked = false;
+                    restoreOptionColor();
                     renderQuestion();
+                    allowTouch();
                     optionsElement.addEventListener("click", checkAnswer);
                 }, pauseTime);
-                
             } else {
                 // 所有问题都已回答完成
                 setTimeout(() => {
@@ -96,9 +119,13 @@ function checkAnswer() {
             const incorrectOption = document.querySelector(
                 `input[value="${selectedAnswer.value}"]`
             );
-            if (incorrectOption) {
-                incorrectOption.parentElement.style.color = "red";
-            }
+            // console.log(selectedAnswer.value);
+            const incorrectLabel = document.querySelector(`#label-${selectedAnswer.value[0]}`);
+            // if (incorrectOption) {
+            //     incorrectOption.parentElement.style.color = "red";
+            // }
+            // console.log(incorrectLabel.innerHTML);
+            if (incorrectLabel) incorrectLabel.className = "btn btn-outline-danger-wrong";
             optionsElement.removeEventListener("click", checkAnswer);
         }
     }
@@ -126,10 +153,14 @@ function fetch_data(url) {
 $(function() {
     let queryString = location.search;
     let urlParams = new URLSearchParams(queryString);
-    page = urlParams.get('data');
+    page = urlParams.get('page');
     testNum = urlParams.get('test');
     // let page = JSON.parse(decodeURIComponent(dataString));
     let currentUrl = `conf/${testNum}-test${page}.json`;
+    let lastpage = document.querySelector('#page-a');
+    lastpage.href = lastpage.href.concat(`?test=${testNum}`);
+
+    // lastpage.href = `chose.html?data&test=${testNum}`;
     
     Promise.all([
         fetch_data('conf/images.json'),
@@ -162,7 +193,13 @@ $(function() {
                     currentQuestionIndex++;
                     noTouch();
                     if (currentQuestionIndex < questions.length) {
-                        renderQuestion();
+                        setTimeout(() => {
+                            selectedAnswer.checked = false;
+                            restoreOptionColor();
+                            renderQuestion();
+                            allowTouch();
+                            optionsElement.addEventListener("click", checkAnswer);
+                        }, pauseTime);
                     } else {
                         // 所有问题都已回答完成
                         setTimeout(() => {
@@ -171,7 +208,6 @@ $(function() {
                             // location.href = "end_answer.html";
                         }, pauseTime);
                     }
-                    optionsElement.addEventListener("click", checkAnswer);
                 }
             } else {
                 alert("请选择一个答案!");

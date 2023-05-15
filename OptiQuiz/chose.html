@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>选择试卷</title>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/chose.css">
     <script src="static/utils/jquery-3.6.3.min.js"></script>
     <script src="static/js/chose.js"></script>
 </head>
 <body>
-    <div>
-        <div><a href="answer_question.html?data=1">试卷1</a></div>
-        <div><a href="answer_question.html?data=2">试卷2</a></div>
-        <div><a href="answer_question.html?data=3">试卷3</a></div>
-        <div><a href="answer_question.html?data=4">试卷4</a></div>
-        <div><a href="answer_question.html?data=5">试卷5</a></div>
+    <div id="header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html" id="test-a">选择练习题</a></li>
+              <li class="breadcrumb-item active" aria-current="page" id="now-li">电工四级理论练习题</li>
+            </ol>
+        </nav>
+    </div>
+    <div id="container">
+        <div><a href="answer_question.html?page=1" class="btn btn-outline-primary">试卷1</a></div>
+        <div><a href="answer_question.html?page=2" class="btn btn-outline-primary">试卷2</a></div>
+        <div><a href="answer_question.html?page=3" class="btn btn-outline-primary">试卷3</a></div>
+        <div><a href="answer_question.html?page=4" class="btn btn-outline-primary">试卷4</a></div>
+        <div><a href="answer_question.html?page=5" class="btn btn-outline-primary">试卷5</a></div>
     </div>
 </body>
 </html>

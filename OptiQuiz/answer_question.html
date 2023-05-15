@@ -5,19 +5,92 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="static/css/answer_question.css" />
+        <link rel="stylesheet" href="static/css/bootstrap.css" />
         <script src="static/utils/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <h1>题目</h1>
-        <div id="img-div"></div>
-        <div id="options">
-            <label><input type="radio" name="answer" value="A" />A</label>
-            <label><input type="radio" name="answer" value="B" />B</label>
-            <label><input type="radio" name="answer" value="C" />C</label>
-            <label><input type="radio" name="answer" value="D" />D</label>
+        <div id="header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" id="test-a">选择练习题</a></li>
+                    <li class="breadcrumb-item"><a href="chose.html" id="page-a">选择试卷</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">试卷1</li>
+                </ol>
+            </nav>
         </div>
-        <button id="submit" class="noSelect">下一题</button>
-        <div id="correct-answer"></div>
+        
+        <div id="container">
+            <div class="question">
+                <h1>题目</h1>
+            </div>
+            <div id="img-div"></div>
+            <div
+                class="btn-group-vertical"
+                role="group"
+                aria-label="Vertical radio toggle button group"
+                id="options"
+            >
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="answer"
+                    id="vbtn-radio1"
+                    autocomplete="off"
+                />
+                <label
+                    class="btn btn-outline-danger"
+                    for="vbtn-radio1"
+                    id="label-A"
+                    >A</label
+                >
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="answer"
+                    id="vbtn-radio2"
+                    autocomplete="off"
+                />
+                <label
+                    class="btn btn-outline-danger"
+                    for="vbtn-radio2"
+                    id="label-B"
+                    >B</label
+                >
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="answer"
+                    id="vbtn-radio3"
+                    autocomplete="off"
+                />
+                <label
+                    class="btn btn-outline-danger"
+                    for="vbtn-radio3"
+                    id="label-C"
+                    >C</label
+                >
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="answer"
+                    id="vbtn-radio4"
+                    autocomplete="off"
+                />
+                <label
+                    class="btn btn-outline-danger"
+                    for="vbtn-radio4"
+                    id="label-D"
+                    >D</label
+                >
+            </div>
+            <div></div>
+            
+            <div id="correct-answer"></div>
+            <div id="div-btn">
+                <button type="button" class="btn btn-outline-success" id="submit">下一题</button>
+            </div>
+        </div>
+        
     </body>
     <script src="static/js/answer_question.js"></script>
 </html>
