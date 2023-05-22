@@ -5,20 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>答题完成</title>
-    <link rel="stylesheet" href="static/css/end_answer.css">
     <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/background.css">
+    <link rel="stylesheet" href="static/css/end_answer.css">
     <script src="static/utils/jquery-3.6.3.min.js"></script>
     <script src="static/js/end_answer.js"></script>
 </head>
 <body>
-    
+    <div id="header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">电工五级理论练习题-试卷1</li>
+            </ol>
+        </nav>
+    </div>
     <div id="container">
-        <h1>恭喜完成答题！！</h1>
+        <h1>恭喜您完成答题！！</h1>
         <div id="score">本次得分：</div>
         <div class="row-btns">
-            <div><a href="answer_question.html" id="retry" class="btn btn-outline-primary">再做一次</a></div>
-            <div><a href="index.html" id="returnIndex" class="btn btn-outline-primary">返回界面</a></div>
+            <div><a href="answer_question.html" id="retry" class="btn btn-outline-primary link-margin-top">再做一次</a></div>
+            <div><a href="index.html" id="returnIndex" class="btn btn-outline-primary link-margin-top">返回界面</a></div>
         </div>
     </div>
+    <footer>
+        <div id="footerBox">
+            &copy;&nbsp;2023&nbsp;泰州市易通职业教育培训学校
+        </div>
+    </footer>
 </body>
 </html>

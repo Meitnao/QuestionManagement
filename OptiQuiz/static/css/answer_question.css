@@ -1,3 +1,7 @@
+body {
+    /* min-width: 500px; */
+}
+
 label {
     display: block;
     margin-bottom: 10px;
@@ -12,6 +16,7 @@ label {
 }
 
 h1 {
+    white-space: pre-wrap;
     user-select: none;
 }
 
@@ -30,7 +35,13 @@ h1 {
 }
 
 #div-btn {
-    text-align: right;
+    display: flex;
+    /* float: left; */
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    
 }
 
 .question {
@@ -44,3 +55,34 @@ h1 {
     border-bottom: solid;
     border-bottom-width: 3px;
 }
+
+#footerBox {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #242424;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    /* visibility: visible; */
+    white-space:nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+
+#label-A {
+    margin-top: 20px;
+}
+
+.options-size {
+    font-size: 28px;
+}
+
+.btn-size {
+    width: 200px;
+    line-height: auto;
+    text-align: center;
+}
+
+/* .btn-margin-left {
+    margin-left: 20px;
+} */

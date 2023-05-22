@@ -8,10 +8,10 @@ $(function() {
     let test = urlParams.get('test');
     let now_page = document.querySelector('#now-li');
     // console.log(test);
-    now_page.innerHTML = `电工${test === "D4" ? "四" : "五"}级理论练习题`;
+    if(test == 'temp') now_page.innerHTML = "测试";
+    else now_page.innerHTML = `电工${test === "D4" ? "四" : "五"}级理论练习题`;
     
     links.forEach(link => {
         link.href = link.href.concat(`&test=${test}`);
-        // console.log(link);
     });
 });

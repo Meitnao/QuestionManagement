@@ -15,3 +15,35 @@
     justify-content: center;
     gap: max(50px, 10%);
 }
+
+#footerBox {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #242424;
+    transform: translate(-50%, -50%);
+    white-space:nowrap;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+#header {
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    border-bottom: solid;
+    border-bottom-width: 3px;
+}
+
+#score {
+    font-size: 28px;
+}
+
+.link-margin-top {
+    box-sizing: content-box;
+    margin-top: 150px;
+    width: 150px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 25px;
+}

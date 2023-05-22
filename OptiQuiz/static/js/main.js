@@ -1,4 +1,5 @@
 const electron = require("electron");
+// const Menu = require("electron");
 
 const { app, BrowserWindow } = require("electron");
 
@@ -8,14 +9,19 @@ let win;
 
 function createWindow() {
     // 创建浏览器窗口。
+    // Menu.setApplicationMenu(null);
+    const { Menu } = require('electron');
+    Menu.setApplicationMenu(null);
     win = new BrowserWindow({
-        width: 600,
+        minWidth: 500,
+        minHeight: 800,
+        width: 500,
         height: 800,
         webPreferences: {
             nodeIntegration: true,
         },
     });
-
+    win.maximize();
     // 加载index.html文件
     win.loadFile("index.html");
 

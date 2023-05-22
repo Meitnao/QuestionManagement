@@ -11,7 +11,7 @@ let checkingAnswer = false;
 const questionNum = 100;
 const questionElement = document.querySelector("h1");
 const optionsElement = document.querySelector("#options");
-const submitButton = document.querySelector("#submit");
+const nextButton = document.querySelector("#next");
 const correctAnswerElement = document.querySelector("#correct-answer");
 const currentImg = document.querySelector('#img');
 // 间隔时间
@@ -80,7 +80,7 @@ function allowTouch() {
 
 function restoreOptionColor() {
     const label = document.querySelector('.btn-outline-danger-wrong');
-    if(label) label.className = "btn btn-outline-danger";
+    if(label) label.className = "btn btn-outline-danger options-size";
 }
 
 function checkAnswer() {
@@ -125,7 +125,7 @@ function checkAnswer() {
             //     incorrectOption.parentElement.style.color = "red";
             // }
             // console.log(incorrectLabel.innerHTML);
-            if (incorrectLabel) incorrectLabel.className = "btn btn-outline-danger-wrong";
+            if (incorrectLabel) incorrectLabel.className = "btn btn-outline-danger-wrong options-size";
             optionsElement.removeEventListener("click", checkAnswer);
         }
     }
@@ -158,11 +158,17 @@ $(function() {
     page = urlParams.get('page');
     testNum = urlParams.get('test');
     // let page = JSON.parse(decodeURIComponent(dataString));
-    let currentUrl = `conf/${testNum}-test${page}.json`;
+    let currentUrl;
     let lastpage = document.querySelector('#page-a');
+    let nowPage = document.querySelector('#now-page');
+    console.log(testNum);
+    if(testNum == 'temp') currentUrl = `conf/temp.json`;
+    else currentUrl = `conf/${testNum}-test${page}.json`;
     lastpage.href = lastpage.href.concat(`?test=${testNum}`);
-
-    // lastpage.href = `chose.html?data&test=${testNum}`;
+    if (testNum === 'D5')
+        nowPage.innerHTML = `电工五级理论练习题-试卷${page}`;
+    else nowPage.innerHTML = `电工四级理论练习题-试卷${page}`;
+        // lastpage.href = `chose.html?data&test=${testNum}`;
     
     Promise.all([
         fetch_data('conf/images.json'),
@@ -178,14 +184,15 @@ $(function() {
         for (let i = 0; i < total; i ++) {
             hasImg[i] = false;
         }
-
-        for (let i of images) {
-            hasImg[i] = true;
+        if(images) {
+            for (let i of images) {
+                hasImg[i] = true;
+            }
         }
         renderQuestion();
         optionsElement.addEventListener("click", checkAnswer);
 
-        submitButton.addEventListener("click", function () {
+        nextButton.addEventListener("click", function () {
             const currentQuestion = questions[currentQuestionIndex];
             const selectedAnswer = document.querySelector(
                 'input[name="answer"]:checked'

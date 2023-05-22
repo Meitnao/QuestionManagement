@@ -4,8 +4,9 @@
         <title>答题页面</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="static/css/answer_question.css" />
         <link rel="stylesheet" href="static/css/bootstrap.css" />
+        <link rel="stylesheet" href="static/css/background.css">
+        <link rel="stylesheet" href="static/css/answer_question.css" />
         <script src="static/utils/jquery-3.6.3.min.js"></script>
     </head>
     <body>
@@ -14,7 +15,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html" id="test-a">选择练习题</a></li>
                     <li class="breadcrumb-item"><a href="chose.html" id="page-a">选择试卷</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">试卷1</li>
+                    <li class="breadcrumb-item active" aria-current="page" id="now-page">试卷1</li>
                 </ol>
             </nav>
         </div>
@@ -38,7 +39,7 @@
                     autocomplete="off"
                 />
                 <label
-                    class="btn btn-outline-danger"
+                    class="btn btn-outline-danger options-size"
                     for="vbtn-radio1"
                     id="label-A"
                     >A</label
@@ -51,7 +52,7 @@
                     autocomplete="off"
                 />
                 <label
-                    class="btn btn-outline-danger"
+                    class="btn btn-outline-danger options-size"
                     for="vbtn-radio2"
                     id="label-B"
                     >B</label
@@ -64,7 +65,7 @@
                     autocomplete="off"
                 />
                 <label
-                    class="btn btn-outline-danger"
+                    class="btn btn-outline-danger options-size"
                     for="vbtn-radio3"
                     id="label-C"
                     >C</label
@@ -77,7 +78,7 @@
                     autocomplete="off"
                 />
                 <label
-                    class="btn btn-outline-danger"
+                    class="btn btn-outline-danger options-size"
                     for="vbtn-radio4"
                     id="label-D"
                     >D</label
@@ -87,10 +88,16 @@
             
             <div id="correct-answer"></div>
             <div id="div-btn">
-                <button type="button" class="btn btn-outline-success" id="submit">下一题</button>
+                <button type="button" class="btn btn-outline-success options-size btn-size btn-marge-left" id="submit">提前交卷</button>
+                <span style="width: 20px; height: 80px;"></span>
+                <button type="button" class="btn btn-outline-success options-size btn-size btn-marge-left" id="next">下一题</button>
             </div>
         </div>
-        
+        <footer>
+            <div id="footerBox">
+                &copy;&nbsp;2023&nbsp;泰州市易通职业教育培训学校
+            </div>
+        </footer>
     </body>
     <script src="static/js/answer_question.js"></script>
 </html>
