@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+/* input[type="radio"] {
+    margin-right: 10px;
+} */
+
+#correct-answer {
+    color: red;
+}
+
+h1 {
+    white-space: pre-wrap;
+    user-select: none;
+}
+
+.noSelect {
+    user-select: none;
+}
+
+#container {
+    align-items: center;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+#div-btn {
+    display: flex;
+    /* float: left; */
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    
+}
+
+.question {
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+#header {
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    border-bottom: solid;
+    border-bottom-width: 3px;
+}
+
+#footerBox {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #242424;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%; */
+
+    
+    /* text-overflow: ellipsis; */
+}
+
+#label-A {
+    margin-top: 20px;
+}
+
+.options-size {
+    font-size: 28px;
+}
+
+.btn-size {
+    width: 200px;
+    line-height: auto;
+    text-align: center;
+}
+
+/* .btn-margin-left {
+    margin-left: 20px;
+} */

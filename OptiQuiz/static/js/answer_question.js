@@ -1,5 +1,9 @@
+// import { Menu, app, BrowserWindow, dialog, path } from 'electron';
+// import { electron } from 'process';
+
 const N = 110;
 let currentQuestionIndex = 0;
+let hasAnswered = 0;
 let isWrong = false;
 let questions = [];
 let wrongCnt = 0;
@@ -14,6 +18,7 @@ const optionsElement = document.querySelector("#options");
 const nextButton = document.querySelector("#next");
 const correctAnswerElement = document.querySelector("#correct-answer");
 const currentImg = document.querySelector('#img');
+const submitButton = document.querySelector('#submit');
 // 间隔时间
 const pauseTime = 300;
 
@@ -26,6 +31,7 @@ function renderQuestion() {
     questionElement.textContent = currentQuestion.question;
     // optionsElement.innerHTML = "";
     imgDiv.remove();
+    if (idx === total) nextButton.innerHTML = "完成";
 
     let new_imgDiv = document.createElement('div');
     new_imgDiv.id = 'img-div';
@@ -33,6 +39,11 @@ function renderQuestion() {
 
     if (hasImg[idx]) {
         let img = document.createElement("img");
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '100%';
+        img.style.width = "60%";
+        img.style.height = "auto";
+        // img.style.transform = 'scale(2)';
         img.src = `static/images/tmImgs/${testNum}-${page}-${idx}.png`;
         new_imgDiv.appendChild(img);
     }
@@ -92,6 +103,7 @@ function checkAnswer() {
         'input[name="answer"]:checked'
     );
     if (selectedAnswer) {
+        hasAnswered ++;
         if (selectedAnswer.value[0] === currentQuestion.answer) {
             currentQuestionIndex++;
             optionsElement.removeEventListener("click", checkAnswer);
@@ -107,7 +119,6 @@ function checkAnswer() {
             } else {
                 // 所有问题都已回答完成
                 setTimeout(() => {
-                    alert("恭喜您完成所有问题！");
                     end_answer(total, wrongCnt);
                 }, pauseTime);
                 
@@ -179,8 +190,6 @@ $(function() {
         total = questions.length;
         wrongCnt = 0;
         
-        // console.log(images);
-        // return;
         for (let i = 0; i < total; i ++) {
             hasImg[i] = false;
         }
@@ -191,6 +200,39 @@ $(function() {
         }
         renderQuestion();
         optionsElement.addEventListener("click", checkAnswer);
+        submitButton.addEventListener("click", () => {
+            const selectedAnswer = document.querySelector(
+                'input[name="answer"]:checked'
+            );
+            let flag = false;
+            // dialog.showMessageBox(win,{
+            //     type:'warning',
+            //     title:'电工理论练习盘',
+            //     message:'请确定是否退出练习',
+            //     // detail:'details',
+            //     buttons:['确定','取消'],
+            // }).then((res) => {
+            //     if (res.response === 0) flag = true;
+            //     else flag = false;
+            // }).then(() => {
+            // });
+            let result = window.confirm("请确定是否退出练习");
+            if (result) {
+                let ans = window.confirm("请再次确定是否退出练习");
+                if (ans) flag = true;
+                else flag = false;
+            } else flag = false;
+            
+            if (selectedAnswer && flag) {
+                setTimeout(() => {
+                    end_answer(currentQuestionIndex + 1, wrongCnt);
+                }, pauseTime);    
+            } else if (!selectedAnswer && flag) {
+                setTimeout(() => {
+                    end_answer(currentQuestionIndex, wrongCnt);
+                }, pauseTime);
+            }
+        });
 
         nextButton.addEventListener("click", function () {
             const currentQuestion = questions[currentQuestionIndex];
@@ -212,7 +254,6 @@ $(function() {
                     } else {
                         // 所有问题都已回答完成
                         setTimeout(() => {
-                            alert("恭喜您完成所有问题！");
                             end_answer(total, wrongCnt);
                             // location.href = "end_answer.html";
                         }, pauseTime);
@@ -224,3 +265,22 @@ $(function() {
         });
     });
 });
+
+
+// export { hasAnswered, total, testNum, page, wrongCnt };
+
+window.exports = {
+    hasAnswered: hasAnswered,
+    total: total,
+    testNum: testNum,
+    page: page,
+    wrongCnt: wrongCnt
+};
+
+// export {
+//     hasAnswered,
+//     total,
+//     testNum,
+//     page,
+//     wrongCnt
+// };
