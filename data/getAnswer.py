@@ -12,9 +12,11 @@ res = re.findall(pattern, text)
 q_res = re.findall(q_pattern, text)
 op_res = re.findall(op_pattern, text)
 
+
 answers = []
 questions = []
 options = []
+
 
 # 由于个别选项很特殊 只能先写入一个临时文件然后手动处理下
 # ls = (' '.join(op_res)).split(' ')
@@ -40,7 +42,7 @@ for i in range(0, len(all_options), 4):
 
 for q in q_res:
     tmp = q[0]
-    s = re.sub(r'\s[A-D]\s', '  ', tmp)
+    s = re.sub(r'\s[A-D]\s', '    ', tmp)
     questions.append(s)
 
 

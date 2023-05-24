@@ -40,7 +40,7 @@ print(len(options))
 
 for q in q_res:
     tmp = q[0]
-    s = re.sub(r'\s[A-D]\s', '  ', tmp)
+    s = re.sub(r'\s[A-D]\s', '    ', tmp)
     questions.append(s)
 
 print(len(questions))
@@ -61,7 +61,14 @@ for i in range(0, len(answers)):
     }
     info.append(part)
 
-    if (i + 1) % 100 == 0:
+    if (i + 1) % 100 == 0 and i < 400:
+        json_str = json.dumps(info, ensure_ascii=False)
+        filename = 'OptiQuiz/conf/D4-test' + str(i + 1)[0] + '.json'
+        with open(filename, 'w', encoding='utf-8') as jf:
+            json.dump(info, jf, ensure_ascii=False, indent=4)
+        jf.close()
+        info = []
+    elif i == 501:
         json_str = json.dumps(info, ensure_ascii=False)
         filename = 'OptiQuiz/conf/D4-test' + str(i + 1)[0] + '.json'
         with open(filename, 'w', encoding='utf-8') as jf:

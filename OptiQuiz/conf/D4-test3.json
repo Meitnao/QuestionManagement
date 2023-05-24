@@ -92,10 +92,10 @@
     {
         "question": "10.根据电动机自动往返梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、LDIX000",
-            "B、ANDX001",
-            "C、OUTY002",
-            "D、ANDIX002"
+            "A、LDI X000",
+            "B、AND X001",
+            "C、OUT Y002",
+            "D、ANDI X002"
         ],
         "answer": "D"
     },
@@ -922,10 +922,10 @@
     {
         "question": "93.根据电机正反转梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、ORIY002",
-            "B、LDIX001",
-            "C、ANDX000",
-            "D、ANDIX002"
+            "A、ORI Y002",
+            "B、LDI X001",
+            "C、AND X000",
+            "D、ANDI X002"
         ],
         "answer": "D"
     },

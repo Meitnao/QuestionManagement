@@ -32,10 +32,10 @@
     {
         "question": "4.根据电动机顺序启动梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、ORIY001",
-            "B、ANDIT20",
-            "C、ANDX001",
-            "D、ANDX002"
+            "A、ORI Y001",
+            "B、ANDI T20",
+            "C、AND X001",
+            "D、AND X002"
         ],
         "answer": "B"
     },
@@ -202,10 +202,10 @@
     {
         "question": "21.根据电机正反转梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、ORIY002",
-            "B、LDIX001",
-            "C、ANDIX000",
-            "D、ANDX002"
+            "A、ORI Y002",
+            "B、LDI X001",
+            "C、ANDI X000",
+            "D、AND X002"
         ],
         "answer": "C"
     },
@@ -352,10 +352,10 @@
     {
         "question": "36.根据电动机自动往返梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、LDX000",
-            "B、ANDX001",
-            "C、ORIX003",
-            "D、ORIY002"
+            "A、LD X000",
+            "B、AND X001",
+            "C、ORI X003",
+            "D、ORI Y002"
         ],
         "answer": "A"
     },
@@ -562,10 +562,10 @@
     {
         "question": "57.根据电机正反转梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、ORIY002",
-            "B、LDIX001",
-            "C、ANDX000",
-            "D、ANDIX002"
+            "A、ORI Y002",
+            "B、LDI X001",
+            "C、AND X000",
+            "D、ANDI X002"
         ],
         "answer": "D"
     },
@@ -692,8 +692,8 @@
     {
         "question": "70.单相半波可控整流电路电感性负载接续流二极管，α=90°时，输出电压Ud为(    )。",
         "options": [
-            "A、0.45 U2",
-            "B、0.9 U2",
+            "A、0.45U2",
+            "B、0.9U2",
             "C、0.225U2",
             "D、1.35U2"
         ],

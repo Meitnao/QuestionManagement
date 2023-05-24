@@ -542,10 +542,10 @@
     {
         "question": "55.对于晶体管输出型PLC，要注意负载电源为(    )，并且不能超过额定值。",
         "options": [
-            "A、AC380V",
-            "B、AC220V",
-            "C、DC220V",
-            "D、DC24V"
+            "A、AC 380V",
+            "B、AC 220V",
+            "C、DC 220V",
+            "D、DC 24V"
         ],
         "answer": "D"
     },

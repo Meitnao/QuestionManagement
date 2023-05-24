@@ -70,9 +70,11 @@ function noTouch() {
     // const currentQuestion = questions[currentQuestionIndex];
     const options = document.querySelectorAll('input[type="radio"]');
     const labels = document.querySelectorAll('label');
+    const buttonNext = document.querySelector('#next');
     labels.forEach(label => {
         label.style.pointerEvents = "none";
     });
+    buttonNext.style.pointerEvents = "none";
     options.forEach(option => {
         option.disabled = true;
     }); 
@@ -81,9 +83,11 @@ function noTouch() {
 function allowTouch() {
     let options = document.querySelectorAll('input[type="radio"]');
     let labels = document.querySelectorAll('label');
+    let buttonNext = document.querySelector('#next');
     labels.forEach(label => {
         label.style.pointerEvents = "auto";
     });
+    buttonNext.style.pointerEvents = "auto";
     options.forEach(option => {
         option.disabled = false;
     });
@@ -175,7 +179,7 @@ $(function() {
     console.log(testNum);
     if(testNum == 'temp') currentUrl = `conf/temp.json`;
     else currentUrl = `conf/${testNum}-test${page}.json`;
-    lastpage.href = lastpage.href.concat(`?test=${testNum}`);
+    // lastpage.href = lastpage.href.concat(`?test=${testNum}`);
     if (testNum === 'D5')
         nowPage.innerHTML = `电工五级理论练习题-试卷${page}`;
     else nowPage.innerHTML = `电工四级理论练习题-试卷${page}`;
@@ -205,20 +209,9 @@ $(function() {
                 'input[name="answer"]:checked'
             );
             let flag = false;
-            // dialog.showMessageBox(win,{
-            //     type:'warning',
-            //     title:'电工理论练习盘',
-            //     message:'请确定是否退出练习',
-            //     // detail:'details',
-            //     buttons:['确定','取消'],
-            // }).then((res) => {
-            //     if (res.response === 0) flag = true;
-            //     else flag = false;
-            // }).then(() => {
-            // });
-            let result = window.confirm("请确定是否退出练习");
+            let result = window.confirm("请您确定是否提前交卷");
             if (result) {
-                let ans = window.confirm("请再次确定是否退出练习");
+                let ans = window.confirm("请您再次确定是否提前交卷");
                 if (ans) flag = true;
                 else flag = false;
             } else flag = false;
@@ -266,9 +259,6 @@ $(function() {
     });
 });
 
-
-// export { hasAnswered, total, testNum, page, wrongCnt };
-
 window.exports = {
     hasAnswered: hasAnswered,
     total: total,
@@ -276,11 +266,3 @@ window.exports = {
     page: page,
     wrongCnt: wrongCnt
 };
-
-// export {
-//     hasAnswered,
-//     total,
-//     testNum,
-//     page,
-//     wrongCnt
-// };

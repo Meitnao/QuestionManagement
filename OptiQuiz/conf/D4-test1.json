@@ -242,10 +242,10 @@
     {
         "question": "25.FX2N可编程序控制器DC输入型，可以直接接入(    )信号。",
         "options": [
-            "A、外部DC24V",
-            "B、4~20mA电流",
-            "C、AC24V",
-            "D、DC0~5V电压"
+            "A、外部DC 24V",
+            "B、4~20mA 电流",
+            "C、AC 24V",
+            "D、DC 0~5V电压"
         ],
         "answer": "A"
     },
@@ -562,10 +562,10 @@
     {
         "question": "57.根据电动机自动往返梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、LDIX002",
-            "B、ORIY002",
-            "C、ANDY001",
-            "D、ANDIX003"
+            "A、LDI X002",
+            "B、ORI Y002",
+            "C、AND Y001",
+            "D、ANDI X003"
         ],
         "answer": "D"
     },

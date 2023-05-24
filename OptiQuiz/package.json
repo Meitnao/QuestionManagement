@@ -12,7 +12,8 @@
     "author": "dao",
     "license": "ISC",
     "devDependencies": {
-        "electron": "^24.3.0",
+        "@types/node": "^11.13.8",
+        "electron": "22.0.0",
         "electron-builder": "^23.6.0",
         "electron-packager": "^17.1.1"
     },
@@ -29,10 +30,14 @@
             "icon": "static/images/icons/demo.ico"
         },
         "win": {
-            "target": "nsis",
-            "arch": [
-                "x64",
-                "ia32"
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
             ],
             "icon": "static/images/icons/demo.ico"
         },
@@ -45,7 +50,7 @@
             "uninstallerIcon": "static/images/icons/demo.ico",
             "installerHeaderIcon": "static/images/icons/demo.ico"
         },
-        "copyright": "泰州市易通职业教育培训学校版权所有"
-	},
+        "copyright": "©2023 泰州市易通职业教育培训学校 . 版权所有 ."
+    },
     "type": "commonjs"
 }

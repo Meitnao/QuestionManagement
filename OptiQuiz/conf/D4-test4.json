@@ -202,10 +202,10 @@
     {
         "question": "21.对于晶闸管输出型PLC，要注意负载电源为(    )，并且不能超过额定值。",
         "options": [
-            "A、AC600V",
-            "B、AC220V",
-            "C、DC220V",
-            "D、DC24V"
+            "A、AC 600V",
+            "B、AC 220V",
+            "C、DC 220V",
+            "D、DC 24V"
         ],
         "answer": "B"
     },
@@ -682,10 +682,10 @@
     {
         "question": "69.根据电动机顺序启动梯形图，下列指令正确的是(    )。",
         "options": [
-            "A、LDIT20",
-            "B、ANDX001",
-            "C、OUTY002",
-            "D、ANDX002"
+            "A、LDI T20",
+            "B、AND X001",
+            "C、OUT Y002",
+            "D、AND X002"
         ],
         "answer": "C"
     },

@@ -94,10 +94,10 @@ A、一
 B、二
 C、三
 D、无限
-A、外部DC24V
-B、4~20mA电流
-C、AC24V
-D、DC0~5V电压
+A、外部DC 24V
+B、4~20mA 电流
+C、AC 24V
+D、DC 0~5V电压
 A、转子串频敏变阻器启动
 B、转子串三级电阻启动
 C、Y-△启动法
@@ -222,10 +222,10 @@ A、键盘给定
 B、模拟电压信号给定
 C、模拟电流信号给定
 D、通信方式给定
-A、LDIX002
-B、ORIY002
-C、ANDY001
-D、ANDIX003
+A、LDI X002
+B、ORI Y002
+C、AND Y001
+D、ANDI X003
 A、IGBT
 B、普通晶闸管
 C、GTO
@@ -614,10 +614,10 @@ A、恒转矩
 B、恒功率
 C、通风机
 D、泵类
-A、AC380V
-B、AC220V
-C、DC220V
-D、DC24V
+A、AC 380V
+B、AC 220V
+C、DC 220V
+D、DC 24V
 A、风扇
 B、加热器
 C、空调
@@ -834,10 +834,10 @@ A、走廊照明灯的两处控制电路
 B、电风扇摇头电路
 C、电梯的开关门电路
 D、电梯的高低速转换电路
-A、LDIX000
-B、ANDX001
-C、OUTY002
-D、ANDIX002
+A、LDI X000
+B、AND X001
+C、OUT Y002
+D、ANDI X002
 A、存储器
 B、计数器
 C、计时器
@@ -1166,10 +1166,10 @@ A、使用效率
 B、绝缘等级
 C、散热效果
 D、接触不良
-A、ORIY002
-B、LDIX001
-C、ANDX000
-D、ANDIX002
+A、ORI Y002
+B、LDI X001
+C、AND X000
+D、ANDI X002
 A、驱动大功率直流负载
 B、直接驱动交流指示灯
 C、驱动额定电流下的交流负载
@@ -1278,10 +1278,10 @@ A、文字符号一样
 B、图形符号一样
 C、无区别
 D、有区别
-A、AC600V
-B、AC220V
-C、DC220V
-D、DC24V
+A、AC 600V
+B、AC 220V
+C、DC 220V
+D、DC 24V
 A、与门
 B、或非门
 C、与非门
@@ -1470,10 +1470,10 @@ A、四层
 B、五层
 C、三层
 D、二层
-A、LDIT20
-B、ANDX001
-C、OUTY002
-D、ANDX002
+A、LDI T20
+B、AND X001
+C、OUT Y002
+D、AND X002
 A、工作的安全可靠
 B、节约电能的要求
 C、降低噪声的要求
@@ -1610,10 +1610,10 @@ A、电流较大
 B、电压较高
 C、脉冲数较少
 D、脉冲数较多
-A、ORIY001
-B、ANDIT20
-C、ANDX001
-D、ANDX002
+A、ORI Y001
+B、ANDI T20
+C、AND X001
+D、AND X002
 A、正转
 B、反转
 C、高速
@@ -1678,10 +1678,10 @@ A、响应速度快
 B、功率大
 C、耐压高
 D、电流大
-A、ORIY002
-B、LDIX001
-C、ANDIX000
-D、ANDX002
+A、ORI Y002
+B、LDI X001
+C、ANDI X000
+D、AND X002
 A、10~20
 B、20~40
 C、5~10
@@ -1738,10 +1738,10 @@ A、创新需要“标新立异”
 B、服务也需要创新
 C、创新是企业进步的灵魂
 D、引进别人的新技术不算创新
-A、LDX000
-B、ANDX001
-C、ORIX003
-D、ORIY002
+A、LD X000
+B、AND X001
+C、ORI X003
+D、ORI Y002
 A、反接制动
 B、抱闸制动
 C、能耗制动
@@ -1822,10 +1822,10 @@ A、正比
 B、反比
 C、相反
 D、相同
-A、ORIY002
-B、LDIX001
-C、ANDX000
-D、ANDIX002
+A、ORI Y002
+B、LDI X001
+C、AND X000
+D、ANDI X002
 A、电刷
 B、转子绕组
 C、端盖
@@ -1874,8 +1874,8 @@ A、偏转系统、扫描
 B、偏转系统、整步系统
 C、扫描、整步系统
 D、扫描、示波管
-A、0.45 U2
-B、0.9 U2
+A、0.45U2
+B、0.9U2
 C、0.225U2
 D、1.35U2
 A、90°
